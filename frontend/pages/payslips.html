@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PayrollPro - Payslips</title>
+
+    <link rel="stylesheet" href="../css/payslips.css">
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <h2>PayrollPro</h2>
+            <p>Payroll Management</p>
+        </div>
+
+        <nav class="navigation">
+
+            <a href="dashboard.html">🏠 Dashboard</a>
+            <a href="employees.html">👨‍💼 Employees</a>
+            <a href="attendance.html">🕐 Attendance</a>
+            <a href="attendance-summary.html">📊 Attendance Summary</a>
+            <a href="leave.html">🏖️ Leave</a>
+            <a href="holidays.html">📅 Holidays</a>
+            <a href="salary-structure.html">💰 Salary Structure</a>
+            <a href="payroll.html">💵 Payroll</a>
+            <a href="payslips.html" class="active">📄 Payslips</a>
+            <a href="reports.html">📈 Reports</a>
+            <a href="settings.html">⚙️ Settings</a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>Payslips</h1>
+
+                <p>
+                    View and generate employee salary slips.
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- FIND PAYSLIP -->
+        <section class="search-section">
+
+            <h2>Find Payslip</h2>
+
+            <p class="section-description">
+                Select an employee and salary month to view the payslip.
+            </p>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="payslipEmployee">
+                        Employee
+                    </label>
+
+                    <select id="payslipEmployee">
+
+                        <option value="">
+                            Select Employee
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="payslipMonth">
+                        Salary Month
+                    </label>
+
+                    <input
+                        type="month"
+                        id="payslipMonth"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                id="viewPayslip"
+                class="view-button"
+            >
+                🔍 View Payslip
+            </button>
+
+        </section>
+
+
+
+        <!-- PAYSLIP -->
+        <section id="payslip" class="payslip">
+
+
+            <!-- COMPANY HEADER -->
+            <div class="company-header">
+
+
+                <!-- LOGO -->
+                <div class="company-logo-area">
+
+                    <div class="company-logo">
+
+                        <img
+                            id="companyLogoImage"
+                            src=""
+                            alt="Company Logo"
+                        >
+
+                        <span id="companyLogoText">
+                            🏢
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- COMPANY DETAILS -->
+                <div class="company-details">
+
+                    <h2 id="slipCompanyName">
+                        PayrollPro
+                    </h2>
+
+                    <p id="slipCompanyAddress">
+                        Company Address
+                    </p>
+
+
+                    <div class="company-contact">
+
+                        <span>
+                            📞
+                            <span id="slipCompanyPhone">-</span>
+                        </span>
+
+                        <span>
+                            ✉️
+                            <span id="slipCompanyEmail">-</span>
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TITLE -->
+                <div class="slip-title">
+
+                    <h3>
+                        SALARY SLIP
+                    </h3>
+
+                    <strong id="slipMonth">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="divider"></div>
+
+
+
+            <!-- EMPLOYEE INFORMATION -->
+            <div class="slip-section">
+
+                <div class="section-title">
+
+                    <h3>
+                        Employee Information
+                    </h3>
+
+                </div>
+
+
+                <div class="info-grid">
+
+
+                    <div class="info-item">
+                        <span>Employee ID</span>
+                        <strong id="slipEmployeeId">-</strong>
+                    </div>
+
+
+                    <div class="info-item">
+                        <span>Employee Name</span>
+                        <strong id="slipEmployeeName">-</strong>
+                    </div>
+
+
+                    <div class="info-item">
+                        <span>Department</span>
+                        <strong id="slipDepartment">-</strong>
+                    </div>
+
+
+                    <div class="info-item">
+                        <span>Designation</span>
+                        <strong id="slipDesignation">-</strong>
+                    </div>
+
+
+                    <div class="info-item">
+                        <span>Date of Joining</span>
+                        <strong id="slipJoiningDate">-</strong>
+                    </div>
+
+
+                    <div class="info-item">
+                        <span>Employee Type</span>
+                        <strong id="slipEmployeeType">-</strong>
+                    </div>
+
+
+                    <div class="info-item">
+                        <span>PAN Number</span>
+                        <strong id="slipPan">-</strong>
+                    </div>
+
+
+                    <div class="info-item">
+                        <span>UAN Number</span>
+                        <strong id="slipUan">-</strong>
+                    </div>
+
+
+                    <div class="info-item">
+                        <span>PF Number</span>
+                        <strong id="slipPf">-</strong>
+                    </div>
+
+
+                    <div class="info-item">
+                        <span>Bank Account</span>
+                        <strong id="slipBankAccount">-</strong>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ATTENDANCE -->
+            <div class="slip-section">
+
+                <div class="section-title">
+
+                    <h3>
+                        Attendance
+                    </h3>
+
+                </div>
+
+
+                <div class="attendance-grid">
+
+
+                    <div class="attendance-item">
+                        <span>Present</span>
+                        <strong id="slipPresent">0</strong>
+                    </div>
+
+
+                    <div class="attendance-item">
+                        <span>Absent</span>
+                        <strong id="slipAbsent">0</strong>
+                    </div>
+
+
+                    <div class="attendance-item">
+                        <span>Half Day</span>
+                        <strong id="slipHalfDay">0</strong>
+                    </div>
+
+
+                    <div class="attendance-item">
+                        <span>Holiday</span>
+                        <strong id="slipHoliday">0</strong>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SALARY -->
+            <div class="salary-section">
+
+
+                <!-- EARNINGS -->
+                <div class="salary-column">
+
+                    <div class="column-header">
+                        <h3>Earnings</h3>
+                    </div>
+
+
+                    <div class="salary-row">
+                        <span>Basic Salary</span>
+                        <strong id="slipBasic">₹0.00</strong>
+                    </div>
+
+
+                    <div class="salary-row">
+                        <span>Allowances</span>
+                        <strong id="slipAllowance">₹0.00</strong>
+                    </div>
+
+
+                    <div class="salary-row">
+                        <span>Bonus</span>
+                        <strong id="slipBonus">₹0.00</strong>
+                    </div>
+
+
+                    <div class="salary-row">
+                        <span>Overtime</span>
+                        <strong id="slipOvertime">₹0.00</strong>
+                    </div>
+
+                </div>
+
+
+
+                <!-- DEDUCTIONS -->
+                <div class="salary-column">
+
+                    <div class="column-header">
+                        <h3>Deductions</h3>
+                    </div>
+
+
+                    <div class="salary-row">
+                        <span>Deductions</span>
+                        <strong id="slipDeduction">₹0.00</strong>
+                    </div>
+
+
+                    <div class="salary-row">
+                        <span>Absent Deduction</span>
+                        <strong id="slipAbsentDeduction">₹0.00</strong>
+                    </div>
+
+
+                    <div class="salary-row">
+                        <span>Half Day Deduction</span>
+                        <strong id="slipHalfDayDeduction">₹0.00</strong>
+                    </div>
+
+
+                    <div class="salary-row">
+                        <span>Other Deduction</span>
+                        <strong id="slipOtherDeduction">₹0.00</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NET SALARY -->
+            <div class="net-salary">
+
+                <div>
+
+                    <span>
+                        Net Salary
+                    </span>
+
+                    <small>
+                        Amount Payable
+                    </small>
+
+                </div>
+
+
+                <strong id="slipNet">
+                    ₹0.00
+                </strong>
+
+            </div>
+
+
+
+            <!-- SIGNATURE -->
+            <div class="signature-section">
+
+                <div class="signature-box">
+
+                    <img
+                        id="companySignature"
+                        src=""
+                        alt="Authorized Signature"
+                    >
+
+                    <div
+                        id="signaturePlaceholder"
+                        class="signature-placeholder"
+                    >
+                        Authorized Signatory
+                    </div>
+
+                    <div class="signature-line"></div>
+
+                    <strong>
+                        Authorized Signature
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FOOTER -->
+            <div class="payslip-footer">
+
+                <p>
+                    This is a computer-generated salary slip.
+                </p>
+
+                <p>
+                    Generated by PayrollPro
+                </p>
+
+            </div>
+
+
+
+            <!-- ACTIONS -->
+            <div class="payslip-actions">
+
+                <button
+                    id="printPayslip"
+                    class="print-button"
+                >
+                    🖨️ Print Payslip
+                </button>
+
+
+                <button
+                    id="downloadPdf"
+                    class="pdf-button"
+                >
+                    📥 Download PDF
+                </button>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="../js/payslips.js"></script>
+
+</body>
+
+</html>

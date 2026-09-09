@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>PayrollPro - Employees</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/employees.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="page-container">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>PayrollPro</h2>
+
+            <p>Payroll Management</p>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="dashboard.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="employees.html" class="active">
+                👨‍💼 Employees
+            </a>
+
+            <a href="attendance.html">
+                🕐 Attendance
+            </a>
+
+            <a href="leave.html">
+                🏖️ Leave
+            </a>
+
+            <a href="holidays.html">
+                📅 Holidays
+            </a>
+
+            <a href="payroll.html">
+                💵 Payroll
+            </a>
+
+            <a href="payslips.html">
+                📄 Payslips
+            </a>
+
+            <a href="reports.html">
+                📈 Reports
+            </a>
+
+            <a href="settings.html">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- PAGE HEADER -->
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>Employees</h1>
+
+                <p>
+                    Manage employee information and records.
+                </p>
+
+            </div>
+
+
+            <button class="add-button">
+
+                + Add Employee
+
+            </button>
+
+        </header>
+
+
+
+        <!-- SEARCH -->
+
+        <section class="search-section">
+
+            <input
+                type="text"
+                id="employeeSearch"
+                placeholder="Search employee by name or ID..."
+            >
+
+        </section>
+
+
+
+        <!-- EMPLOYEE TABLE -->
+
+        <section class="employee-section">
+
+            <div class="section-title">
+
+                <h2>Employee List</h2>
+
+                <span id="employeeCount">
+                    0 Employees
+                </span>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Employee ID</th>
+
+                            <th>Name</th>
+
+                            <th>Department</th>
+
+                            <th>Designation</th>
+
+                            <th>Joining Date</th>
+
+                            <th>Status</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="employeeTableBody">
+
+                        <tr>
+
+                            <td colspan="7">
+
+                                <div class="empty-state">
+
+                                    <div class="empty-icon">
+                                        👨‍💼
+                                    </div>
+
+                                    <h3>
+                                        No Employees Found
+                                    </h3>
+
+                                    <p>
+                                        Add your first employee
+                                        to get started.
+                                    </p>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             ADD / EDIT EMPLOYEE MODAL
+        ====================================================== -->
+
+        <div
+            id="employeeModal"
+            class="employee-modal"
+        >
+
+            <div class="employee-modal-content">
+
+
+                <!-- MODAL HEADER -->
+
+                <div class="modal-header">
+
+                    <h2 id="modalTitle">
+                        Add New Employee
+                    </h2>
+
+                    <button
+                        id="closeModal"
+                        class="close-button"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+
+
+                <!-- FORM -->
+
+                <form id="employeeForm">
+
+
+                    <!-- EMPLOYEE ID -->
+
+                    <div class="form-group">
+
+                        <label for="employeeId">
+                            Employee ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="employeeId"
+                            placeholder="Example: EMP001"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- FULL NAME -->
+
+                    <div class="form-group">
+
+                        <label for="employeeName">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="employeeName"
+                            placeholder="Enter employee name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- EMAIL -->
+
+                    <div class="form-group">
+
+                        <label for="employeeEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="employeeEmail"
+                            placeholder="Enter email address"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- MOBILE -->
+
+                    <div class="form-group">
+
+                        <label for="employeeMobile">
+                            Mobile Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="employeeMobile"
+                            placeholder="Enter mobile number"
+                            maxlength="10"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- DEPARTMENT -->
+
+                    <div class="form-group">
+
+                        <label for="department">
+                            Department
+                        </label>
+
+                        <input
+                            type="text"
+                            id="department"
+                            placeholder="Example: IT"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- DESIGNATION -->
+
+                    <div class="form-group">
+
+                        <label for="designation">
+                            Designation
+                        </label>
+
+                        <input
+                            type="text"
+                            id="designation"
+                            placeholder="Example: Software Engineer"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- JOINING DATE -->
+
+                    <div class="form-group">
+
+                        <label for="joiningDate">
+                            Joining Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="joiningDate"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         EMPLOYEE TYPE
+                    ================================================== -->
+
+                    <div class="form-group">
+
+                        <label for="employeeType">
+                            Employee Type
+                        </label>
+
+                        <select
+                            id="employeeType"
+                            required
+                        >
+
+                            <option value="">
+                                Select Employee Type
+                            </option>
+
+                            <option value="Full Time">
+                                Full Time
+                            </option>
+
+                            <option value="Part Time">
+                                Part Time
+                            </option>
+
+                            <option value="Contract">
+                                Contract
+                            </option>
+
+                            <option value="Intern">
+                                Intern
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- PAN -->
+
+                    <div class="form-group">
+
+                        <label for="panNumber">
+                            PAN Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="panNumber"
+                            placeholder="Example: ABCDE1234F"
+                            maxlength="10"
+                        >
+
+                    </div>
+
+
+
+                    <!-- UAN -->
+
+                    <div class="form-group">
+
+                        <label for="uanNumber">
+                            UAN Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="uanNumber"
+                            placeholder="Enter UAN number"
+                            maxlength="12"
+                        >
+
+                    </div>
+
+
+
+                    <!-- PF -->
+
+                    <div class="form-group">
+
+                        <label for="pfNumber">
+                            PF Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="pfNumber"
+                            placeholder="Enter PF number"
+                        >
+
+                    </div>
+
+
+
+                    <!-- BANK ACCOUNT -->
+
+                    <div class="form-group">
+
+                        <label for="bankAccount">
+                            Bank Account Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="bankAccount"
+                            placeholder="Enter bank account number"
+                        >
+
+                    </div>
+
+
+
+                    <!-- BASIC SALARY -->
+
+                    <div class="form-group">
+
+                        <label for="basicSalary">
+                            Basic Salary
+                        </label>
+
+                        <input
+                            type="number"
+                            id="basicSalary"
+                            placeholder="Enter basic salary"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- STATUS -->
+
+                    <div class="form-group">
+
+                        <label for="employeeStatus">
+                            Status
+                        </label>
+
+                        <select
+                            id="employeeStatus"
+                            required
+                        >
+
+                            <option value="">
+                                Select Status
+                            </option>
+
+                            <option value="Active">
+                                Active
+                            </option>
+
+                            <option value="Inactive">
+                                Inactive
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- FORM BUTTONS -->
+
+                    <div class="form-buttons">
+
+                        <button
+                            type="button"
+                            id="cancelEmployee"
+                            class="cancel-button"
+                        >
+                            Cancel
+                        </button>
+
+
+                        <button
+                            type="submit"
+                            class="save-button"
+                        >
+                            Save Employee
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+    </main>
+
+</div>
+
+
+<script src="../js/employees.js"></script>
+
+</body>
+
+</html>

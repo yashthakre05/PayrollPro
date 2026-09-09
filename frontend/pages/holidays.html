@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>PayrollPro - Holidays</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/holidays.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="page-container">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>PayrollPro</h2>
+
+            <p>Payroll Management</p>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="dashboard.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="employees.html">
+                👨‍💼 Employees
+            </a>
+
+            <a href="attendance.html">
+                🕐 Attendance
+            </a>
+
+            <a href="attendance-summary.html">
+                📊 Attendance Summary
+            </a>
+
+            <a href="leave.html">
+                🏖️ Leave
+            </a>
+
+            <a href="holidays.html" class="active">
+                📅 Holidays
+            </a>
+
+            <a href="salary-structure.html">
+                💰 Salary Structure
+            </a>
+
+            <a href="payroll.html">
+                💵 Payroll
+            </a>
+
+            <a href="payslips.html">
+                📄 Payslips
+            </a>
+
+            <a href="reports.html">
+                📈 Reports
+            </a>
+
+            <a href="settings.html">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <header class="page-header">
+
+            <h1>Holiday Management</h1>
+
+            <p>
+                Manage company holidays and working calendar.
+            </p>
+
+        </header>
+
+
+
+        <!-- =================================================
+             ADD HOLIDAY
+        ================================================== -->
+
+        <section class="holiday-form-section">
+
+            <h2>📅 Add Holiday</h2>
+
+            <p class="description">
+                Add company holidays that can be used
+                during attendance and payroll calculation.
+            </p>
+
+
+            <form id="holidayForm">
+
+                <div class="form-grid">
+
+
+                    <!-- Holiday Name -->
+
+                    <div class="form-group">
+
+                        <label for="holidayName">
+                            Holiday Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="holidayName"
+                            placeholder="Example: Independence Day"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Holiday Date -->
+
+                    <div class="form-group">
+
+                        <label for="holidayDate">
+                            Holiday Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="holidayDate"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Holiday Type -->
+
+                    <div class="form-group">
+
+                        <label for="holidayType">
+                            Holiday Type
+                        </label>
+
+                        <select
+                            id="holidayType"
+                            required
+                        >
+
+                            <option value="">
+                                Select Type
+                            </option>
+
+                            <option value="National Holiday">
+                                National Holiday
+                            </option>
+
+                            <option value="Company Holiday">
+                                Company Holiday
+                            </option>
+
+                            <option value="Optional Holiday">
+                                Optional Holiday
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Description -->
+
+                    <div class="form-group">
+
+                        <label for="holidayDescription">
+                            Description
+                        </label>
+
+                        <input
+                            type="text"
+                            id="holidayDescription"
+                            placeholder="Optional description"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="save-button"
+                >
+                    💾 Add Holiday
+                </button>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =================================================
+             HOLIDAY LIST
+        ================================================== -->
+
+        <section class="holiday-table-section">
+
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Holiday List</h2>
+
+                    <p>
+                        All saved company holidays.
+                    </p>
+
+                </div>
+
+                <strong id="holidayCount">
+                    0 Holidays
+                </strong>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Holiday</th>
+
+                            <th>Date</th>
+
+                            <th>Type</th>
+
+                            <th>Description</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="holidayTableBody">
+
+                        <tr>
+
+                            <td colspan="5">
+
+                                <div class="empty-state">
+
+                                    <div class="empty-icon">
+                                        📅
+                                    </div>
+
+                                    <h3>
+                                        No Holidays Added
+                                    </h3>
+
+                                    <p>
+                                        Add your first company holiday.
+                                    </p>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<script src="../js/holidays.js"></script>
+
+</body>
+
+</html>

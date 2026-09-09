@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>PayrollPro - Reports</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/reports.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="page-container">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>PayrollPro</h2>
+
+            <p>Payroll Management</p>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="dashboard.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="employees.html">
+                👨‍💼 Employees
+            </a>
+
+            <a href="attendance.html">
+                🕐 Attendance
+            </a>
+
+            <a href="attendance-summary.html">
+                📊 Attendance Summary
+            </a>
+
+            <a href="leave.html">
+                🏖️ Leave
+            </a>
+
+            <a href="holidays.html">
+                📅 Holidays
+            </a>
+
+            <a href="salary-structure.html">
+                💰 Salary Structure
+            </a>
+
+            <a href="payroll.html">
+                💵 Payroll
+            </a>
+
+            <a href="payslips.html">
+                📄 Payslips
+            </a>
+
+            <a href="reports.html" class="active">
+                📈 Reports
+            </a>
+
+            <a href="settings.html">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- PAGE HEADER -->
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>Reports</h1>
+
+                <p>
+                    View and analyze payroll records.
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             REPORT FILTER
+        ================================================== -->
+
+        <section class="report-filter">
+
+            <h2>Payroll Report</h2>
+
+            <p class="section-description">
+                Select a salary month and employee to
+                generate a payroll report.
+            </p>
+
+
+            <div class="filter-grid">
+
+
+                <!-- MONTH -->
+
+                <div class="form-group">
+
+                    <label for="reportMonth">
+                        Salary Month
+                    </label>
+
+                    <input
+                        type="month"
+                        id="reportMonth"
+                    >
+
+                </div>
+
+
+
+                <!-- EMPLOYEE -->
+
+                <div class="form-group">
+
+                    <label for="reportEmployee">
+                        Employee
+                    </label>
+
+                    <select id="reportEmployee">
+
+                        <option value="">
+                            All Employees
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- BUTTONS -->
+
+            <div class="button-group">
+
+                <button
+                    id="generateReport"
+                    class="generate-button"
+                >
+                    📊 Generate Report
+                </button>
+
+
+                <button
+                    id="printReport"
+                    class="print-button"
+                >
+                    🖨️ Print Report
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             REPORT SUMMARY
+        ================================================== -->
+
+        <section class="summary-section">
+
+            <h2>Report Summary</h2>
+
+
+            <div class="summary-grid">
+
+
+                <!-- TOTAL EMPLOYEES -->
+
+                <div class="summary-card">
+
+                    <span>
+                        Total Employees
+                    </span>
+
+                    <strong id="totalEmployees">
+                        0
+                    </strong>
+
+                </div>
+
+
+
+                <!-- TOTAL PAYROLL -->
+
+                <div class="summary-card">
+
+                    <span>
+                        Total Payroll
+                    </span>
+
+                    <strong id="totalPayroll">
+                        ₹0.00
+                    </strong>
+
+                </div>
+
+
+
+                <!-- TOTAL PRESENT -->
+
+                <div class="summary-card">
+
+                    <span>
+                        Total Present
+                    </span>
+
+                    <strong id="totalPresent">
+                        0
+                    </strong>
+
+                </div>
+
+
+
+                <!-- TOTAL ABSENT -->
+
+                <div class="summary-card">
+
+                    <span>
+                        Total Absent
+                    </span>
+
+                    <strong id="totalAbsent">
+                        0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             REPORT TABLE
+        ================================================== -->
+
+        <section class="report-table-section">
+
+            <div class="table-header">
+
+                <div>
+
+                    <h2>Payroll Details</h2>
+
+                    <p>
+                        Generated payroll records
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Employee ID</th>
+
+                            <th>Employee Name</th>
+
+                            <th>Month</th>
+
+                            <th>Present</th>
+
+                            <th>Absent</th>
+
+                            <th>Basic Salary</th>
+
+                            <th>Net Salary</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="reportTableBody">
+
+                        <tr>
+
+                            <td colspan="7">
+
+                                <div class="empty-state">
+
+                                    <div class="empty-icon">
+                                        📊
+                                    </div>
+
+                                    <h3>
+                                        No Report Data
+                                    </h3>
+
+                                    <p>
+                                        Generate a report
+                                        to view payroll data.
+                                    </p>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<script src="../js/reports.js"></script>
+
+</body>
+
+</html>

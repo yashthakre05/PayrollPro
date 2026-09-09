@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic page settings -->
+    <meta charset="UTF-8">
+
+    <!-- Mobile responsive support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PayrollPro - Salary Structure</title>
+
+    <!-- Salary Structure CSS -->
+    <link rel="stylesheet" href="../css/salary-structure.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         MAIN PAGE CONTAINER
+    ====================================================== -->
+
+    <div class="page-container">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <!-- Logo -->
+            <div class="logo">
+
+                <h2>PayrollPro</h2>
+
+                <p>Payroll Management</p>
+
+            </div>
+
+
+            <!-- Navigation -->
+            <nav class="navigation">
+
+                <a href="dashboard.html">
+                    🏠 Dashboard
+                </a>
+
+                <a href="employees.html">
+                    👨‍💼 Employees
+                </a>
+
+                <a href="attendance.html">
+                    🕐 Attendance
+                </a>
+
+                <a href="attendance-summary.html">
+                    📊 Attendance Summary
+                </a>
+
+                <a href="leave.html">
+                    🏖️ Leave
+                </a>
+
+                <a href="holidays.html">
+                    📅 Holidays
+                </a>
+
+                <a href="payroll.html">
+                    💵 Payroll
+                </a>
+
+                <a href="salary-structure.html" class="active">
+                    💰 Salary Structure
+                </a>
+
+                <a href="payslips.html">
+                    📄 Payslips
+                </a>
+
+                <a href="reports.html">
+                    📈 Reports
+                </a>
+
+                <a href="settings.html">
+                    ⚙️ Settings
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- Page Header -->
+
+            <header class="page-header">
+
+                <div>
+
+                    <h1>Salary Structure</h1>
+
+                    <p>
+                        Manage employee salary components.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 SALARY FORM
+            ================================================== -->
+
+            <section class="salary-section">
+
+                <h2>Employee Salary Details</h2>
+
+
+                <form id="salaryForm">
+
+
+                    <!-- Employee -->
+
+                    <div class="form-group">
+
+                        <label for="salaryEmployee">
+                            Employee
+                        </label>
+
+                        <select
+                            id="salaryEmployee"
+                            required
+                        >
+
+                            <option value="">
+                                Select Employee
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- Basic Salary -->
+
+                    <div class="form-group">
+
+                        <label for="basicSalary">
+                            Basic Salary
+                        </label>
+
+                        <input
+                            type="number"
+                            id="basicSalary"
+                            placeholder="Enter basic salary"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- HRA -->
+
+                    <div class="form-group">
+
+                        <label for="hra">
+                            HRA
+                        </label>
+
+                        <input
+                            type="number"
+                            id="hra"
+                            placeholder="Enter HRA"
+                            min="0"
+                            value="0"
+                        >
+
+                    </div>
+
+
+
+                    <!-- Allowance -->
+
+                    <div class="form-group">
+
+                        <label for="allowance">
+                            Other Allowance
+                        </label>
+
+                        <input
+                            type="number"
+                            id="allowance"
+                            placeholder="Enter allowance"
+                            min="0"
+                            value="0"
+                        >
+
+                    </div>
+
+
+
+                    <!-- PF -->
+
+                    <div class="form-group">
+
+                        <label for="pf">
+                            PF Deduction
+                        </label>
+
+                        <input
+                            type="number"
+                            id="pf"
+                            placeholder="Enter PF deduction"
+                            min="0"
+                            value="0"
+                        >
+
+                    </div>
+
+
+
+                    <!-- Other Deduction -->
+
+                    <div class="form-group">
+
+                        <label for="otherDeduction">
+                            Other Deduction
+                        </label>
+
+                        <input
+                            type="number"
+                            id="otherDeduction"
+                            placeholder="Enter other deduction"
+                            min="0"
+                            value="0"
+                        >
+
+                    </div>
+
+
+
+                    <!-- Save Button -->
+
+                    <button
+                        type="submit"
+                        class="save-button"
+                    >
+                        Save Salary Structure
+                    </button>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SALARY SUMMARY
+            ================================================== -->
+
+            <section class="salary-summary">
+
+                <h2>Salary Summary</h2>
+
+
+                <div class="summary-grid">
+
+
+                    <div class="summary-card">
+
+                        <h3>Basic Salary</h3>
+
+                        <p id="summaryBasic">
+                            ₹0
+                        </p>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <h3>Total Allowances</h3>
+
+                        <p id="summaryAllowance">
+                            ₹0
+                        </p>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <h3>Total Deductions</h3>
+
+                        <p id="summaryDeduction">
+                            ₹0
+                        </p>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <h3>Net Salary</h3>
+
+                        <p id="summaryNet">
+                            ₹0
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SAVED SALARY STRUCTURES
+            ================================================== -->
+
+            <section class="salary-list">
+
+                <h2>Saved Salary Structures</h2>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Employee ID</th>
+
+                                <th>Employee Name</th>
+
+                                <th>Basic Salary</th>
+
+                                <th>Allowances</th>
+
+                                <th>Deductions</th>
+
+                                <th>Net Salary</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="salaryTableBody">
+
+                            <tr>
+
+                                <td colspan="7">
+
+                                    <div class="empty-state">
+
+                                        <div class="empty-icon">
+                                            💰
+                                        </div>
+
+                                        <h3>
+                                            No Salary Structure Found
+                                        </h3>
+
+                                        <p>
+                                            Add salary details
+                                            to get started.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- Salary Structure JavaScript -->
+    <script src="../js/salary-structure.js"></script>
+
+</body>
+
+</html>

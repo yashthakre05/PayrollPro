@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>PayrollPro - Settings</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/settings.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="page-container">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <h2>PayrollPro</h2>
+
+                <p>Payroll Management</p>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a href="dashboard.html">
+                    🏠 Dashboard
+                </a>
+
+                <a href="employees.html">
+                    👨‍💼 Employees
+                </a>
+
+                <a href="attendance.html">
+                    🕐 Attendance
+                </a>
+
+                <a href="attendance-summary.html">
+                    📊 Attendance Summary
+                </a>
+
+                <a href="leave.html">
+                    🏖️ Leave
+                </a>
+
+                <a href="holidays.html">
+                    📅 Holidays
+                </a>
+
+                <a href="salary-structure.html">
+                    💰 Salary Structure
+                </a>
+
+                <a href="payroll.html">
+                    💵 Payroll
+                </a>
+
+                <a href="payslips.html">
+                    📄 Payslips
+                </a>
+
+                <a
+                    href="reports.html"
+                >
+                    📈 Reports
+                </a>
+
+                <a
+                    href="settings.html"
+                    class="active"
+                >
+                    ⚙️ Settings
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- PAGE HEADER -->
+
+            <header class="page-header">
+
+                <h1>Settings</h1>
+
+                <p>
+                    Manage company and payroll settings.
+                </p>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 COMPANY INFORMATION
+            ================================================== -->
+
+            <section class="settings-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        🏢 Company Information
+                    </h2>
+
+                    <p>
+                        This information will be used
+                        on employee payslips.
+                    </p>
+
+                </div>
+
+
+                <form id="companyForm">
+
+                    <div class="form-grid">
+
+
+                        <!-- Company ID -->
+
+                        <div class="form-group">
+
+                            <label for="companyId">
+                                Company ID
+                            </label>
+
+                            <input
+                                type="text"
+                                id="companyId"
+                                placeholder="Enter company ID"
+                            >
+
+                        </div>
+
+
+                        <!-- Company Name -->
+
+                        <div class="form-group">
+
+                            <label for="companyName">
+                                Company Name *
+                            </label>
+
+                            <input
+                                type="text"
+                                id="companyName"
+                                placeholder="Enter company name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Email -->
+
+                        <div class="form-group">
+
+                            <label for="companyEmail">
+                                Company Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="companyEmail"
+                                placeholder="company@example.com"
+                            >
+
+                        </div>
+
+
+                        <!-- Phone -->
+
+                        <div class="form-group">
+
+                            <label for="companyPhone">
+                                Company Phone
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="companyPhone"
+                                placeholder="Enter phone number"
+                            >
+
+                        </div>
+
+
+                        <!-- Address -->
+
+                        <div class="form-group full-width">
+
+                            <label for="companyAddress">
+                                Company Address
+                            </label>
+
+                            <textarea
+                                id="companyAddress"
+                                rows="3"
+                                placeholder="Enter complete company address"
+                            ></textarea>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             COMPANY LOGO
+                        ================================================== -->
+
+                        <div class="form-group">
+
+                            <label for="companyLogo">
+                                Company Logo
+                            </label>
+
+                            <input
+                                type="file"
+                                id="companyLogo"
+                                accept="image/png,image/jpeg,image/jpg,image/webp"
+                            >
+
+                            <small>
+                                Upload PNG, JPG or WEBP logo.
+                            </small>
+
+                        </div>
+
+
+                        <!-- =================================================
+                             AUTHORIZED SIGNATURE
+                        ================================================== -->
+
+                        <div class="form-group">
+
+                            <label for="companySignature">
+                                Authorized Signature
+                            </label>
+
+                            <input
+                                type="file"
+                                id="companySignature"
+                                accept="image/png,image/jpeg,image/jpg,image/webp"
+                            >
+
+                            <small>
+                                Upload authorized signature image.
+                            </small>
+
+                        </div>
+
+
+                        <!-- LOGO PREVIEW -->
+
+                        <div
+                            class="form-group"
+                            id="logoPreviewContainer"
+                            style="display:none;"
+                        >
+
+                            <label>
+                                Logo Preview
+                            </label>
+
+                            <img
+                                id="logoPreview"
+                                src=""
+                                alt="Company Logo Preview"
+                                style="
+                                    width:100px;
+                                    height:70px;
+                                    object-fit:contain;
+                                    border:1px solid #ddd;
+                                    border-radius:8px;
+                                    padding:5px;
+                                "
+                            >
+
+                        </div>
+
+
+                        <!-- SIGNATURE PREVIEW -->
+
+                        <div
+                            class="form-group"
+                            id="signaturePreviewContainer"
+                            style="display:none;"
+                        >
+
+                            <label>
+                                Signature Preview
+                            </label>
+
+                            <img
+                                id="signaturePreview"
+                                src=""
+                                alt="Signature Preview"
+                                style="
+                                    width:180px;
+                                    height:70px;
+                                    object-fit:contain;
+                                    border:1px solid #ddd;
+                                    border-radius:8px;
+                                    padding:5px;
+                                "
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="save-button"
+                    >
+                        💾 Save Company Information
+                    </button>
+
+                </form>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CURRENT COMPANY INFORMATION
+            ================================================== -->
+
+            <section class="settings-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        📋 Current Company Information
+                    </h2>
+
+                </div>
+
+
+                <div class="company-preview">
+
+
+                    <div class="preview-item">
+
+                        <span>
+                            Company Name
+                        </span>
+
+                        <strong id="displayCompanyName">
+                            Not Set
+                        </strong>
+
+                    </div>
+
+
+                    <div class="preview-item">
+
+                        <span>
+                            Company ID
+                        </span>
+
+                        <strong id="displayCompanyId">
+                            Not Set
+                        </strong>
+
+                    </div>
+
+
+                    <div class="preview-item">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <strong id="displayCompanyEmail">
+                            Not Set
+                        </strong>
+
+                    </div>
+
+
+                    <div class="preview-item">
+
+                        <span>
+                            Phone
+                        </span>
+
+                        <strong id="displayCompanyPhone">
+                            Not Set
+                        </strong>
+
+                    </div>
+
+
+                    <div class="preview-item full-width">
+
+                        <span>
+                            Address
+                        </span>
+
+                        <strong id="displayCompanyAddress">
+                            Not Set
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SALARY CALCULATION SETTINGS
+            ================================================== -->
+
+            <section class="settings-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        💰 Salary Calculation
+                    </h2>
+
+                    <p>
+                        Choose how monthly salary should
+                        be calculated.
+                    </p>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="salaryCalculationMethod">
+                        Salary Calculation Method
+                    </label>
+
+
+                    <select id="salaryCalculationMethod">
+
+                        <option value="30">
+                            Fixed 30 Days
+                        </option>
+
+                        <option value="actual">
+                            Actual Calendar Days
+                        </option>
+
+                    </select>
+
+
+                    <small>
+                        Fixed 30 Days divides monthly salary
+                        by 30. Actual Calendar Days uses
+                        28, 29, 30 or 31 days according
+                        to the selected salary month.
+                    </small>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="saveSalaryMethod"
+                    class="save-button"
+                >
+                    💾 Save Salary Calculation
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 DANGER ZONE
+            ================================================== -->
+
+            <section class="settings-section danger-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        ⚠️ Reset Settings
+                    </h2>
+
+                    <p>
+                        Remove saved company information
+                        from this browser.
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="resetSettings"
+                    class="reset-button"
+                >
+                    🗑️ Reset Company Settings
+                </button>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+
+    <script src="../js/settings.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Page ki basic information -->
+    <meta charset="UTF-8">
+
+    <!-- Mobile aur tablet ke liye responsive layout -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab mein dikhne wala naam -->
+    <title>PayrollPro - Dashboard</title>
+
+    <!-- Dashboard ki CSS file connect kar rahe hain -->
+    <link rel="stylesheet" href="../css/dashboard.css">
+    
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         MAIN LAYOUT
+         Sidebar + Main Content dono isi ke andar hain
+    ====================================================== -->
+    <div class="dashboard-container">
+
+
+        <!-- =================================================
+             SIDEBAR
+             Left side ka navigation menu
+        ================================================== -->
+        <aside class="sidebar">
+
+            <!-- Software ka logo/name -->
+            <div class="logo">
+                <h2>PayrollPro</h2>
+                <p>Payroll Management</p>
+            </div>
+
+
+            <!-- Navigation Menu -->
+            <nav class="navigation">
+
+                <!-- Dashboard -->
+                <a href="dashboard.html" class="nav-link active">
+                    🏠 Dashboard
+                </a>
+
+                <!-- Employee Management -->
+                <a href="employees.html" class="nav-link">
+                    👨‍💼 Employees
+                </a>
+
+                <!-- Attendance -->
+                <a href="attendance.html" class="nav-link">
+                    🕐 Attendance
+                </a>
+
+                <!-- Leave Management -->
+                <a href="leave.html" class="nav-link">
+                    🏖️ Leave
+                </a>
+
+                <!-- Holiday Management -->
+                <a href="holidays.html" class="nav-link">
+                    📅 Holidays
+                </a>
+
+                <!-- Payroll -->
+                <a href="payroll.html" class="nav-link">
+                    💰 Payroll
+                </a>
+
+                <!-- Payslips -->
+                <a href="payslips.html" class="nav-link">
+                    📄 Payslips
+                </a>
+
+                <!-- Reports -->
+                <a href="reports.html" class="nav-link">
+                    📊 Reports
+                </a>
+
+                <!-- Settings -->
+                <a href="settings.html" class="nav-link">
+                    ⚙️ Settings
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+             Dashboard ka right side content
+        ================================================== -->
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 TOP HEADER
+            ================================================== -->
+            <header class="top-header">
+
+                <!-- Page heading -->
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Welcome back to PayrollPro</p>
+                </div>
+
+                <!-- Admin information -->
+                <div class="admin-info">
+                    <span>🔔</span>
+                    <span>Admin</span>
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 WELCOME SECTION
+            ================================================== -->
+            <section class="welcome-section">
+
+                <h2>Welcome to PayrollPro 👋</h2>
+
+                <p>
+                    Manage employees, attendance, payroll and payslips
+                    from one place.
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+            ================================================== -->
+            <section class="summary-cards">
+
+
+                <!-- Total Employees -->
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        👨‍💼
+                    </div>
+
+                    <div>
+                        <h3>Total Employees</h3>
+                        <p id="totalEmployees">0</p>
+                    </div>
+
+                </div>
+
+
+                <!-- Present Employees -->
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        🟢
+                    </div>
+
+                    <div>
+                        <h3>Present Today</h3>
+                        <p id="presentToday">0</p>
+                    </div>
+
+                </div>
+
+
+                <!-- Pending Payroll -->
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        💰
+                    </div>
+
+                    <div>
+                        <h3>Pending Payroll</h3>
+                        <p id="pendingPayroll">0</p>
+                    </div>
+
+                </div>
+
+
+                <!-- Generated Payslips -->
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        📄
+                    </div>
+
+                    <div>
+                        <h3>Payslips</h3>
+                        <p id="totalPayslip">0</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 RECENT PAYROLL SECTION
+            ================================================== -->
+            <section class="recent-payroll">
+
+                <div class="section-header">
+
+                    <h2>Recent Payroll</h2>
+
+                    <button>
+                        View All
+                    </button>
+
+                </div>
+
+
+                <!-- Empty state -->
+                <div class="empty-state">
+
+                    <div class="empty-icon">
+                        📊
+                    </div>
+
+                    <h3>No Payroll Records</h3>
+
+                    <p>
+                        Payroll records will appear here after
+                        salary processing.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+    <script src="../js/dashboard.js" defer></script>
+
+</body>
+
+</html>

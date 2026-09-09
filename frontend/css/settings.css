@@ -1,0 +1,614 @@
+/* =========================================================
+   PAYROLLPRO - SETTINGS CSS
+   Professional Settings Page
+========================================================= */
+
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #f4f6f9;
+
+    color: #222;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   PAGE CONTAINER
+========================= */
+
+.page-container {
+    display: flex;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    width: 240px;
+
+    min-height: 100vh;
+
+    background-color: #1f2937;
+
+    color: white;
+
+    padding: 25px 15px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.logo h2 {
+    font-size: 24px;
+
+    margin-bottom: 5px;
+}
+
+
+.logo p {
+    font-size: 12px;
+
+    color: #cbd5e1;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.navigation a {
+    display: block;
+
+    padding: 12px 15px;
+
+    color: #e5e7eb;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+.navigation a:hover {
+    background-color: #374151;
+}
+
+
+.navigation a.active {
+    background-color: #f97316;
+
+    color: white;
+}
+
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main-content {
+    flex: 1;
+
+    padding: 30px;
+
+    max-width: 1400px;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+
+.page-header h1 {
+    font-size: 30px;
+
+    margin-bottom: 6px;
+
+    color: #111827;
+}
+
+
+.page-header p {
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   SETTINGS SECTION
+========================= */
+
+.settings-section {
+    background-color: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================
+   SECTION HEADER
+========================= */
+
+.section-header {
+    margin-bottom: 22px;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+.section-header h2 {
+    font-size: 20px;
+
+    color: #111827;
+
+    margin-bottom: 6px;
+}
+
+
+.section-header p {
+    color: #6b7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   COMPANY FORM
+========================= */
+
+#companyForm {
+    display: block;
+
+}
+
+.form-grid{
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================
+   FORM GROUP
+========================= */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+
+.form-group label {
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+
+/* =========================
+   INPUTS
+========================= */
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+
+    padding: 12px 13px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    background-color: #ffffff;
+
+    color: #111827;
+
+    font-size: 14px;
+
+    font-family: Arial, sans-serif;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+
+.form-group textarea {
+    resize: vertical;
+
+    min-height: 90px;
+}
+
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #f97316;
+
+    box-shadow:
+        0 0 0 3px rgba(249, 115, 22, 0.12);
+}
+
+
+/* =========================
+   PLACEHOLDER
+========================= */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9ca3af;
+}
+
+
+/* =========================
+   SAVE BUTTON
+========================= */
+
+.save-button {
+    margin-top: 20px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #f97316;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+
+.save-button:hover {
+    background-color: #ea580c;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   COMPANY PREVIEW
+========================= */
+
+.company-preview {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+}
+
+
+/* =========================
+   PREVIEW ITEM
+========================= */
+
+.preview-item {
+    padding: 17px;
+
+    background-color: #f9fafb;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 9px;
+
+    min-width: 0;
+}
+
+
+.preview-item.full-width {
+    grid-column: 1 / -1;
+}
+
+
+.preview-item span {
+    display: block;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+
+    font-weight: 500;
+}
+
+
+.preview-item strong {
+    display: block;
+
+    color: #111827;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* =========================
+   SALARY CALCULATION
+========================= */
+
+#salaryCalculationMethod {
+    max-width: 500px;
+
+    cursor: pointer;
+}
+
+
+.form-group small {
+    margin-top: 8px;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    max-width: 650px;
+}
+
+
+/* =========================
+   DANGER SECTION
+========================= */
+
+.danger-section {
+    border-left: 4px solid #ef4444;
+}
+
+
+.danger-section .section-header {
+    border-bottom-color: #fee2e2;
+}
+
+
+.danger-section .section-header h2 {
+    color: #b91c1c;
+}
+
+
+/* =========================
+   RESET BUTTON
+========================= */
+
+.reset-button {
+    padding: 11px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #6b7280;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+
+.reset-button:hover {
+    background-color: #4b5563;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   RESPONSIVE - TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+
+    .main-content {
+        padding: 22px;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .company-preview {
+        grid-template-columns: 1fr;
+    }
+
+
+    .preview-item.full-width {
+        grid-column: auto;
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE - MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .page-container {
+        flex-direction: column;
+    }
+
+
+    .sidebar {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 15px;
+    }
+
+
+    .logo {
+        margin-bottom: 18px;
+    }
+
+
+    .navigation {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 6px;
+    }
+
+
+    .navigation a {
+        padding: 10px;
+
+        font-size: 12px;
+
+        text-align: center;
+    }
+
+
+    .main-content {
+        padding: 15px;
+    }
+
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+
+    .settings-section {
+        padding: 18px;
+    }
+
+
+    .section-header h2 {
+        font-size: 18px;
+    }
+
+
+    .save-button,
+    .reset-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL SCREEN
+========================= */
+
+@media (max-width: 400px) {
+
+    .navigation {
+        grid-template-columns: 1fr;
+    }
+
+
+    .main-content {
+        padding: 10px;
+    }
+
+
+    .settings-section {
+        padding: 15px;
+    }
+
+}

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic page settings -->
+    <meta charset="UTF-8">
+
+    <!-- Mobile responsive support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
+    <title>PayrollPro - Attendance Summary</title>
+
+    <!-- Attendance Summary ki CSS file -->
+    <link rel="stylesheet" href="../css/attendance-summary.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         MAIN PAGE CONTAINER
+    ====================================================== -->
+
+    <div class="page-container">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <!-- PayrollPro logo -->
+            <div class="logo">
+
+                <h2>PayrollPro</h2>
+
+                <p>Payroll Management</p>
+
+            </div>
+
+
+            <!-- Navigation menu -->
+            <nav class="navigation">
+
+                <a href="dashboard.html">
+                    🏠 Dashboard
+                </a>
+
+                <a href="employees.html">
+                    👨‍💼 Employees
+                </a>
+
+                <a href="attendance.html" class="active">
+                    🕐 Attendance
+                </a>
+
+                <a href="attendance-summary.html">
+                    📊 Attendance Summary
+                </a>
+
+                <a href="leave.html">
+                    🏖️ Leave
+                </a>
+
+                <a href="holidays.html">
+                    📅 Holidays
+                </a>
+
+                <a href="payroll.html">
+                    💵 Payroll
+                </a>
+
+                <a href="payslips.html">
+                    📄 Payslips
+                </a>
+
+                <a href="reports.html">
+                    📈 Reports
+                </a>
+
+                <a href="settings.html">
+                    ⚙️ Settings
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 PAGE HEADER
+            ================================================== -->
+
+            <header class="page-header">
+
+                <div>
+
+                    <h1>Attendance Summary</h1>
+
+                    <p>
+                        View monthly attendance summary of employees.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 FILTER SECTION
+            ================================================== -->
+
+            <section class="filter-section">
+
+                <!-- Employee selection -->
+                <div class="form-group">
+
+                    <label for="summaryEmployee">
+                        Employee
+                    </label>
+
+                    <select id="summaryEmployee">
+
+                        <option value="">
+                            Select Employee
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Month selection -->
+                <div class="form-group">
+
+                    <label for="summaryMonth">
+                        Month
+                    </label>
+
+                    <input
+                        type="month"
+                        id="summaryMonth"
+                    >
+
+                </div>
+
+
+                <!-- Search button -->
+                <button
+                    id="viewSummary"
+                    class="summary-button"
+                >
+                    View Summary
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SUMMARY CARDS
+            ================================================== -->
+
+            <section class="summary-cards">
+
+
+                <!-- Total working days -->
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <h3>Working Days</h3>
+
+                        <p id="workingDays">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Present days -->
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        🟢
+                    </div>
+
+                    <div>
+
+                        <h3>Present</h3>
+
+                        <p id="summaryPresent">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Absent days -->
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        🔴
+                    </div>
+
+                    <div>
+
+                        <h3>Absent</h3>
+
+                        <p id="summaryAbsent">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Half days -->
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        🟡
+                    </div>
+
+                    <div>
+
+                        <h3>Half Day</h3>
+
+                        <p id="summaryHalfDay">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ATTENDANCE SUMMARY TABLE
+            ================================================== -->
+
+            <section class="summary-section">
+
+                <div class="section-title">
+
+                    <h2>Monthly Attendance</h2>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Date</th>
+
+                                <th>Employee</th>
+
+                                <th>Status</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <!-- Monthly records JavaScript se aayenge -->
+                        <tbody id="summaryTableBody">
+
+                            <tr>
+
+                                <td colspan="3">
+
+                                    <div class="empty-state">
+
+                                        <div class="empty-icon">
+                                            📊
+                                        </div>
+
+                                        <h3>
+                                            Select Employee and Month
+                                        </h3>
+
+                                        <p>
+                                            Your monthly attendance
+                                            will appear here.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- Attendance Summary JavaScript -->
+    <script src="../js/attendance-summary.js"></script>
+
+</body>
+
+</html>

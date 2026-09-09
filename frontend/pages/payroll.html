@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic page settings -->
+    <meta charset="UTF-8">
+
+    <!-- Mobile responsive support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PayrollPro - Payroll</title>
+
+    <!-- Payroll CSS -->
+    <link rel="stylesheet" href="../css/payroll.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         MAIN PAGE CONTAINER
+    ====================================================== -->
+
+    <div class="page-container">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <h2>PayrollPro</h2>
+
+                <p>Payroll Management</p>
+
+            </div>
+
+
+            <nav class="navigation">
+
+                <a href="dashboard.html">
+                    🏠 Dashboard
+                </a>
+
+                <a href="employees.html">
+                    👨‍💼 Employees
+                </a>
+
+                <a href="attendance.html">
+                    🕐 Attendance
+                </a>
+
+                <a href="attendance-summary.html">
+                    📊 Attendance Summary
+                </a>
+
+                <a href="leave.html">
+                    🏖️ Leave
+                </a>
+
+                <a href="holidays.html">
+                    📅 Holidays
+                </a>
+
+                <a href="salary-structure.html">
+                    💰 Salary Structure
+                </a>
+
+                <a href="payroll.html" class="active">
+                    💵 Payroll
+                </a>
+
+                <a href="payslips.html">
+                    📄 Payslips
+                </a>
+
+                <a href="reports.html">
+                    📈 Reports
+                </a>
+
+                <a href="settings.html">
+                    ⚙️ Settings
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- Page Header -->
+
+            <header class="page-header">
+
+                <div>
+
+                    <h1>Payroll</h1>
+
+                    <p>
+                        Calculate monthly employee salary.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PAYROLL FILTER
+            ================================================== -->
+
+            <section class="payroll-section">
+
+                <h2>Generate Payroll</h2>
+
+
+                <div class="form-grid">
+
+
+                    <!-- Employee -->
+
+                    <div class="form-group">
+
+                        <label for="payrollEmployee">
+                            Employee
+                        </label>
+
+                        <select id="payrollEmployee">
+
+                            <option value="">
+                                Select Employee
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Month -->
+
+                    <div class="form-group">
+
+                        <label for="payrollMonth">
+                            Salary Month
+                        </label>
+
+                        <input
+                            type="month"
+                            id="payrollMonth"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="calculatePayroll"
+                    class="calculate-button"
+                >
+                    Calculate Payroll
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ATTENDANCE SUMMARY
+            ================================================== -->
+
+            <section class="attendance-section">
+
+                <h2>Attendance</h2>
+
+
+                <div class="summary-grid">
+
+                    <div class="summary-card">
+
+                        <h3>Present</h3>
+
+                        <p id="payrollPresent">
+                            0
+                        </p>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <h3>Absent</h3>
+
+                        <p id="payrollAbsent">
+                            0
+                        </p>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <h3>Half Day</h3>
+
+                        <p id="payrollHalfDay">
+                            0
+                        </p>
+
+                    </div>
+
+
+                    <div class="summary-card">
+
+                        <h3>Holiday</h3>
+
+                        <p id="payrollHoliday">
+                            0
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SALARY CALCULATION
+            ================================================== -->
+
+            <section class="calculation-section">
+
+                <h2>Salary Calculation</h2>
+
+
+                <div class="calculation-grid">
+
+
+                    <div class="calculation-row">
+
+                        <span>
+                            Basic Salary
+                        </span>
+
+                        <strong id="payrollBasic">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="calculation-row">
+
+                        <span>
+                            Allowances
+                        </span>
+
+                        <strong id="payrollAllowance">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="calculation-row deduction">
+
+                        <span>
+                            Deductions
+                        </span>
+
+                        <strong id="payrollDeduction">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="calculation-row">
+
+                        <span>
+                            Absent Deduction
+                        </span>
+
+                        <strong id="absentDeduction">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="calculation-row net-salary">
+
+                        <span>
+                            Net Salary
+                        </span>
+
+                        <strong id="payrollNet">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="savePayroll"
+                    class="save-button"
+                >
+                    Save Payroll
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 SAVED PAYROLL
+            ================================================== -->
+
+            <section class="payroll-list">
+
+                <h2>Payroll Records</h2>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Employee ID</th>
+
+                                <th>Employee Name</th>
+
+                                <th>Month</th>
+
+                                <th>Present</th>
+
+                                <th>Absent</th>
+
+                                <th>Net Salary</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="payrollTableBody">
+
+                            <tr>
+
+                                <td colspan="6">
+
+                                    <div class="empty-state">
+
+                                        <div class="empty-icon">
+                                            💵
+                                        </div>
+
+                                        <h3>
+                                            No Payroll Records
+                                        </h3>
+
+                                        <p>
+                                            Calculate payroll to
+                                            create a record.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- Payroll JavaScript -->
+    <script src="../js/payroll.js"></script>
+
+</body>
+
+</html>

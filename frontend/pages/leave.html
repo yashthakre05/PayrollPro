@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>PayrollPro - Leave Management</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/leave.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="page-container">
+
+
+    <!-- =================================================
+         SIDEBAR
+    ================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <h2>PayrollPro</h2>
+
+            <p>Payroll Management</p>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <a href="dashboard.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="employees.html">
+                👨‍💼 Employees
+            </a>
+
+            <a href="attendance.html">
+                🕐 Attendance
+            </a>
+
+            <a href="attendance-summary.html">
+                📊 Attendance Summary
+            </a>
+
+            <a href="leave.html" class="active">
+                🏖️ Leave
+            </a>
+
+            <a href="holidays.html">
+                📅 Holidays
+            </a>
+
+            <a href="salary-structure.html">
+                💰 Salary Structure
+            </a>
+
+            <a href="payroll.html">
+                💵 Payroll
+            </a>
+
+            <a href="payslips.html">
+                📄 Payslips
+            </a>
+
+            <a href="reports.html">
+                📈 Reports
+            </a>
+
+            <a href="settings.html">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN CONTENT
+    ================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="page-header">
+
+            <h1>Leave Management</h1>
+
+            <p>
+                Manage employee leave records.
+            </p>
+
+        </header>
+
+
+
+        <!-- =================================================
+             ADD LEAVE
+        ================================================== -->
+
+        <section class="leave-form-section">
+
+            <h2>Apply Leave</h2>
+
+
+            <form id="leaveForm">
+
+                <div class="form-grid">
+
+
+                    <!-- Employee -->
+
+                    <div class="form-group">
+
+                        <label for="leaveEmployee">
+                            Employee
+                        </label>
+
+                        <select
+                            id="leaveEmployee"
+                            required
+                        >
+
+                            <option value="">
+                                Select Employee
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Leave Type -->
+
+                    <div class="form-group">
+
+                        <label for="leaveType">
+                            Leave Type
+                        </label>
+
+                        <select
+                            id="leaveType"
+                            required
+                        >
+
+                            <option value="">
+                                Select Leave Type
+                            </option>
+
+                            <option value="Casual Leave">
+                                Casual Leave
+                            </option>
+
+                            <option value="Sick Leave">
+                                Sick Leave
+                            </option>
+
+                            <option value="Earned Leave">
+                                Earned Leave
+                            </option>
+
+                            <option value="Other">
+                                Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Start Date -->
+
+                    <div class="form-group">
+
+                        <label for="leaveStart">
+                            Start Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="leaveStart"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- End Date -->
+
+                    <div class="form-group">
+
+                        <label for="leaveEnd">
+                            End Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="leaveEnd"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Reason -->
+
+                    <div class="form-group full-width">
+
+                        <label for="leaveReason">
+                            Reason
+                        </label>
+
+                        <textarea
+                            id="leaveReason"
+                            rows="3"
+                            placeholder="Enter leave reason"
+                        ></textarea>
+
+                    </div>
+
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="save-button"
+                >
+                    💾 Save Leave
+                </button>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LEAVE RECORDS
+        ================================================== -->
+
+        <section class="leave-table-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>Leave Records</h2>
+
+                    <p>
+                        Saved employee leave records.
+                    </p>
+
+                </div>
+
+                <strong id="leaveCount">
+                    0 Records
+                </strong>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Employee</th>
+
+                            <th>Leave Type</th>
+
+                            <th>Start Date</th>
+
+                            <th>End Date</th>
+
+                            <th>Days</th>
+
+                            <th>Reason</th>
+
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="leaveTableBody">
+
+                        <tr>
+
+                            <td colspan="7">
+
+                                <div class="empty-state">
+
+                                    <div class="empty-icon">
+                                        🏖️
+                                    </div>
+
+                                    <h3>
+                                        No Leave Records
+                                    </h3>
+
+                                    <p>
+                                        Apply leave to create
+                                        your first record.
+                                    </p>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- JavaScript -->
+
+<script src="../js/leave.js"></script>
+
+</body>
+
+</html>

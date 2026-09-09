@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Basic page settings -->
+    <meta charset="UTF-8">
+
+    <!-- Mobile responsive support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab ka title -->
+    <title>PayrollPro - Attendance</title>
+
+    <!-- Attendance page ki CSS file -->
+    <link rel="stylesheet" href="../css/attendance.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         MAIN PAGE CONTAINER
+    ====================================================== -->
+
+    <div class="page-container">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+
+        <aside class="sidebar">
+
+            <!-- Software name -->
+            <div class="logo">
+
+                <h2>PayrollPro</h2>
+
+                <p>Payroll Management</p>
+
+            </div>
+
+
+            <!-- Navigation menu -->
+            <nav class="navigation">
+
+                <a href="dashboard.html">
+                    🏠 Dashboard
+                </a>
+
+                <a href="employees.html">
+                    👨‍💼 Employees
+                </a>
+
+                <a href="attendance.html" class="active">
+                    🕐 Attendance
+                </a>
+
+                <a href="attendance-summary.html">
+                    📊 Attendance Summary
+                </a>
+
+                <a href="leave.html">
+                    🏖️ Leave
+                </a>
+
+                <a href="holidays.html">
+                    📅 Holidays
+                </a>
+
+                <a href="payroll.html">
+                    💵 Payroll
+                </a>
+
+                <a href="payslips.html">
+                    📄 Payslips
+                </a>
+
+                <a href="reports.html">
+                    📈 Reports
+                </a>
+
+                <a href="settings.html">
+                    ⚙️ Settings
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 PAGE HEADER
+            ================================================== -->
+
+            <header class="page-header">
+
+                <div>
+
+                    <h1>Attendance</h1>
+
+                    <p>
+                        Manage employee attendance and working days.
+                    </p>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 ATTENDANCE FILTER
+            ================================================== -->
+
+            <section class="filter-section">
+
+                <!-- Employee select -->
+                <div class="form-group">
+
+                    <label for="employeeSelect">
+                        Employee
+                    </label>
+
+                    <select id="employeeSelect">
+
+                        <option value="">
+                            Select Employee
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Attendance date -->
+                <div class="form-group">
+
+                    <label for="attendanceDate">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="attendanceDate"
+                    >
+
+                </div>
+
+
+                <!-- Attendance status -->
+                <div class="form-group">
+
+                    <label for="attendanceStatus">
+                        Status
+                    </label>
+
+                    <select id="attendanceStatus">
+
+                        <option value="Present">
+                            Present
+                        </option>
+
+                        <option value="Absent">
+                            Absent
+                        </option>
+
+                        <option value="Half Day">
+                            Half Day
+                        </option>
+
+                        <option value="Holiday">
+                            Holiday
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Save attendance button -->
+                <button id="saveAttendance" class="save-button">
+                    Save Attendance
+                </button>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ATTENDANCE SUMMARY
+            ================================================== -->
+
+            <section class="summary-cards">
+
+
+                <!-- Present days -->
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        🟢
+                    </div>
+
+                    <div>
+
+                        <h3>Present</h3>
+
+                        <p id="presentCount">0</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Absent days -->
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        🔴
+                    </div>
+
+                    <div>
+
+                        <h3>Absent</h3>
+
+                        <p id="absentCount">0</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Half days -->
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        🟡
+                    </div>
+
+                    <div>
+
+                        <h3>Half Day</h3>
+
+                        <p id="halfDayCount">0</p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Holidays -->
+                <div class="summary-card">
+
+                    <div class="card-icon">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <h3>Holidays</h3>
+
+                        <p id="holidayCount">0</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 ATTENDANCE TABLE
+            ================================================== -->
+
+            <section class="attendance-section">
+
+                <div class="section-title">
+
+                    <h2>Attendance Records</h2>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Employee ID</th>
+
+                                <th>Employee Name</th>
+
+                                <th>Date</th>
+
+                                <th>Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <!-- Records JavaScript se yahan aayenge -->
+                        <tbody id="attendanceTableBody">
+
+                            <tr>
+
+                                <td colspan="5">
+
+                                    <div class="empty-state">
+
+                                        <div class="empty-icon">
+                                            🕐
+                                        </div>
+
+                                        <h3>
+                                            No Attendance Records
+                                        </h3>
+
+                                        <p>
+                                            Attendance records will
+                                            appear here.
+                                        </p>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- Attendance JavaScript -->
+    <script src="../js/attendance.js"></script>
+
+</body>
+
+</html>

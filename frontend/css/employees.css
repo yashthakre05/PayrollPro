@@ -1,0 +1,586 @@
+/* =========================================================
+   PAYROLLPRO - EMPLOYEES PAGE
+   Ye file Employee Management page ka design control karti hai.
+========================================================= */
+
+
+/* =========================================================
+   BASIC RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #222;
+}
+
+
+/* =========================================================
+   MAIN PAGE CONTAINER
+========================================================= */
+
+.page-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 240px;
+    background-color: #1f2937;
+    color: white;
+    padding: 25px 15px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.logo h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.logo p {
+    font-size: 12px;
+    color: #cbd5e1;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+/* Navigation links */
+
+.navigation a {
+    display: block;
+
+    padding: 12px 15px;
+
+    color: #e5e7eb;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+
+/* Hover effect */
+
+.navigation a:hover {
+    background-color: #374151;
+}
+
+
+/* Active page */
+
+.navigation a.active {
+    background-color: #f97316;
+    color: white;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+    flex: 1;
+
+    padding: 25px;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+.page-header h1 {
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+
+.page-header p {
+    color: #6b7280;
+}
+
+
+/* =========================================================
+   ADD EMPLOYEE BUTTON
+========================================================= */
+
+.add-button {
+    background-color: #f97316;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 18px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+.add-button:hover {
+    background-color: #ea580c;
+}
+
+
+/* =========================================================
+   SEARCH SECTION
+========================================================= */
+
+.search-section {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Search input */
+
+.search-section input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+/* Input focus */
+
+.search-section input:focus {
+    border-color: #f97316;
+}
+
+
+/* =========================================================
+   EMPLOYEE SECTION
+========================================================= */
+
+.employee-section {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.section-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.section-title h2 {
+    font-size: 20px;
+}
+
+
+.section-title span {
+    color: #6b7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+========================================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* =========================================================
+   EMPLOYEE TABLE
+========================================================= */
+
+table {
+    width: 100%;
+
+    border-collapse: collapse;
+
+    min-width: 800px;
+}
+
+
+/* Table heading */
+
+thead {
+    background-color: #f9fafb;
+}
+
+
+th {
+    text-align: left;
+
+    padding: 14px;
+
+    font-size: 13px;
+
+    color: #4b5563;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+
+/* Table data */
+
+td {
+    padding: 14px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   Jab employee list empty ho.
+========================================================= */
+
+.empty-state {
+    text-align: center;
+
+    padding: 50px;
+
+    color: #6b7280;
+}
+
+
+.empty-icon {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+
+.empty-state h3 {
+    color: #374151;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 700px) {
+
+    /* Sidebar ki width chhoti */
+    .sidebar {
+        width: 190px;
+    }
+
+
+    /* Header ko vertical karna */
+    .page-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 15px;
+    }
+
+
+    /* Main content padding */
+    .main-content {
+        padding: 15px;
+    }
+
+}
+
+/* =========================================================
+   ADD EMPLOYEE MODAL
+   Employee form ko popup window ki tarah show karta hai.
+========================================================= */
+
+.employee-modal {
+    /* Modal ko screen ke upar fixed rakhta hai */
+    position: fixed;
+
+    /* Puri screen cover karega */
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    /* Background ko thoda dark karta hai */
+    background-color: rgba(0, 0, 0, 0.5);
+
+    /* Modal ko center mein rakhta hai */
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    /* Baaki elements ke upar show hoga */
+    z-index: 1000;
+
+    /* Modal ke andar content bada hone par scroll */
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   MODAL CONTENT
+========================================================= */
+
+.employee-modal-content {
+    width: 90%;
+    max-width: 600px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    padding: 25px;
+
+    margin: 20px;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.modal-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+
+.modal-header h2 {
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.close-button {
+    border: none;
+
+    background: transparent;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    color: #6b7280;
+}
+
+
+.close-button:hover {
+    color: #111827;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+
+/* Form labels */
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #374151;
+}
+
+
+/* Form inputs */
+
+.form-group input,
+.form-group select {
+    width: 100%;
+
+    padding: 11px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 7px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+/* Input focus effect */
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #f97316;
+}
+
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+.form-buttons {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+/* Cancel button */
+
+.cancel-button {
+    padding: 11px 18px;
+
+    border: none;
+
+    background-color: #e5e7eb;
+
+    color: #374151;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+
+.cancel-button:hover {
+    background-color: #d1d5db;
+}
+
+
+/* Save button */
+
+.save-button {
+    padding: 11px 18px;
+
+    border: none;
+
+    background-color: #f97316;
+
+    color: white;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+
+.save-button:hover {
+    background-color: #ea580c;
+}
+
+/* =========================================================
+   ADD EMPLOYEE MODAL SCROLL FIX
+========================================================= */
+
+.employee-modal {
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.employee-modal-content {
+    max-height: 90vh;
+    overflow-y: auto;
+}
