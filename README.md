@@ -74,7 +74,7 @@ PayrollPro can generate a professional PDF payslip containing employee details, 
 
 ![Payslip](PayrollPro-ScreenShot/payslip.png.png)
 
-📄 **View Sample Payslip:** [Open Sample Payslip](PayrollPro-ScreenShot/PayrollPro-Payslip.pdf)
+📄 **View Sample Payslip:** [Open Sample Payslip](PayrollPro-ScreenShot/PayrollPro - Payslips.pdf)
 
 ---
 
