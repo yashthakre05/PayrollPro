@@ -41,21 +41,36 @@ The project focuses on making payroll-related tasks more organized, efficient, a
 
 ### 🏠 Dashboard
 
+The dashboard provides an overview of employees and payroll-related information.
+
 ![Dashboard](PayrollPro-ScreenShot/dashboard.png.png)
 
 ### 👨‍💼 Employees
+
+Manage employee information and maintain employee records in one place.
 
 ![Employees](PayrollPro-ScreenShot/employees.png.png)
 
 ### 📅 Attendance
 
+Track employee attendance including:
+
+* Present
+* Absent
+* Half Day
+* Holiday
+
 ![Attendance](PayrollPro-ScreenShot/attendance.png.png)
 
 ### 💰 Payroll
 
+Calculate employee salary based on salary structure and attendance records, including applicable deductions.
+
 ![Payroll](PayrollPro-ScreenShot/payroll.png.png)
 
 ### 🧾 Payslip
+
+Generate a professional payslip containing employee details, salary components, deductions, and net salary.
 
 ![Payslip](PayrollPro-ScreenShot/payslip.png.png)
 
