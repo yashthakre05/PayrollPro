@@ -41,23 +41,23 @@ The project focuses on making payroll-related tasks more organized, efficient, a
 
 ### 🏠 Dashboard
 
-![Dashboard](PayrollPro-ScreenShot/dashboard.png)
+![Dashboard](PayrollPro-ScreenShot/dashboard.png.png)
 
 ### 👨‍💼 Employees
 
-![Employees](PayrollPro-ScreenShot/employees.png)
+![Employees](PayrollPro-ScreenShot/employees.png.png)
 
 ### 📅 Attendance
 
-![Attendance](PayrollPro-ScreenShot/attendance.png)
+![Attendance](PayrollPro-ScreenShot/attendance.png.png)
 
 ### 💰 Payroll
 
-![Payroll](PayrollPro-ScreenShot/payroll.png)
+![Payroll](PayrollPro-ScreenShot/payroll.png.png)
 
 ### 🧾 Payslip
 
-![Payslip](PayrollPro-ScreenShot/payslip.png)
+![Payslip](PayrollPro-ScreenShot/payslip.png.png)
 
 ---
 
