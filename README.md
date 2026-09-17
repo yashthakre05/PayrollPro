@@ -122,7 +122,7 @@ PayrollPro/
 │   ├── attendance.png
 │   ├── payroll.png
 │   ├── payslip.png
-│   └── Sample-payslip.pdf
+│   └── PayrollPro - Payslips.pdf
 │
 └── README.md
 ```
