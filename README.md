@@ -43,7 +43,6 @@ The project focuses on making payroll-related tasks more organized, efficient, a
 
 The dashboard provides an overview of employees and payroll-related information.
 
-dashboard.png.png
 ---
 
 ### 👨‍💼 Employee Management
@@ -113,7 +112,7 @@ PayrollPro/
 │   ├── models/
 │   └── utils/
 │
-├── screenshots/
+├── PayrollPro-ScreenShot/
 │   ├── dashboard.png
 │   ├── employees.png
 │   ├── attendance.png
