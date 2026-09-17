@@ -159,7 +159,8 @@ PayrollPro was developed as a practical project to understand and implement a re
 
 B.Tech Information Technology
 
-📌 GitHub: [yashthakre05](https://github.com/yashthakre05)
+* 💻 GitHub: [yashthakre05](https://github.com/yashthakre05)
+* 🔗 LinkedIn: [Yash Thakre](YOUR_LINKEDIN_PROFILE_URL)
 
 ---
 
