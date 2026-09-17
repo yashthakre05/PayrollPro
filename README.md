@@ -70,9 +70,11 @@ Calculate employee salary based on salary structure and attendance records, incl
 
 ### 🧾 Payslip
 
-Generate a professional payslip containing employee details, salary components, deductions, and net salary.
+PayrollPro can generate a professional PDF payslip containing employee details, salary components, deductions, and net salary.
 
 ![Payslip](PayrollPro-ScreenShot/payslip.png.png)
+
+📄 **View Sample Payslip:** [Open Sample Payslip](PayrollPro-ScreenShot/PayrollPro-Payslip.pdf)
 
 ---
 
@@ -119,7 +121,8 @@ PayrollPro/
 │   ├── employees.png
 │   ├── attendance.png
 │   ├── payroll.png
-│   └── payslip.png
+│   ├── payslip.png
+│   └── Sample-payslip.pdf
 │
 └── README.md
 ```
